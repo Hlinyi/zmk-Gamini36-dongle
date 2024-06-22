@@ -138,6 +138,36 @@
         Lower {
             label = "Lower";
             bindings = <
+&none  &kp LG(D)  &kp LA(A)  &kp UP     &kp DELETE  &trans     &trans     &kp N7  &kp N8  &kp N9      &trans      &none
+&none  &kp LC(A)  &kp LEFT   &kp DOWN   &kp RIGHT   &kp B      &kp EQUAL  &kp N4  &kp N5  &kp N6      &kp N0      &none
+&none  &kp LC(Z)  &kp LC(X)  &kp RC(C)  &kp LC(V)   &kp LG(V)  &kp MINUS  &kp N1  &kp N2  &kp N3      &kp KP_DOT  &none
+       &trans     &trans     &trans     &trans      &trans                        &kp N0  &kp KP_DOT  &trans
+            >;
+        };
+
+        Raise {
+            label = "Raise";
+            bindings = <
+&none  &trans      &kp N7  &kp N8  &kp N9  &trans          &kp QUESTION       &kp AMPS  &kp ASTERISK  &kp LPAR   &none     &none
+&none  &kp N0      &kp N4  &kp N5  &kp N6  &none           &kp COLON          &kp DLLR  &kp PRCNT     &kp CARET  &kp RPAR  &none
+&none  &kp KP_DOT  &kp N1  &kp N2  &kp N3  &kp LEFT_SHIFT  &kp DOUBLE_QUOTES  &kp EXCL  &kp AT        &kp HASH   &none     &none
+       &trans      &trans  &trans  &trans  &trans                                       &trans        &trans     &trans
+            >;
+        };
+
+        Shortcut {
+            label = "shortcut";
+            bindings = <
+&none  &none   &none       &kp C_VOL_UP  &none       &none   &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &none
+&none  &none   &kp C_PREV  &kp C_PP      &kp C_NEXT  &none   &bt BT_CLR    &none         &none         &none         &none         &none
+&none  &none   &none       &kp C_VOL_DN  &trans      &none   &none         &none         &none         &none         &none         &none
+       &trans  &trans      &trans        &trans      &trans                              &trans        &trans        &trans
+            >;
+        };
+
+        Game {
+            label = "Game";
+            bindings = <
 &dongle_bootload_macro  &trans  &kp MINUS  &kp UP    &kp EQUAL  &trans             &bt BT_SEL 0          &bt BT_SEL 1  &bt BT_SEL 2            &bt BT_SEL 3  &bt BT_SEL 4  &trans
 &trans                  &trans  &kp LEFT   &kp DOWN  &kp RIGHT  &kp C_VOLUME_UP    &kp C_BRIGHTNESS_INC  &bt BT_CLR    &trans                  &trans        &trans        &trans
 &trans                  &trans  &trans     &trans    &trans     &kp C_VOLUME_DOWN  &kp C_BRI_DEC         &trans        &dongle_bootload_macro  &trans        &trans        &trans
@@ -145,42 +175,12 @@
             >;
         };
 
-        Raise {
-            label = "Raise";
-            bindings = <
-&trans  &kp EXCL      &kp AT                  &kp HASH  &kp DLLR  &kp PRCNT       &kp CARET  &kp AMPS         &kp ASTERISK  &kp LPAR                        &kp RPAR                   &trans
-&trans  &kp ESCAPE    &kp CAPSLOCK            &kp HOME  &kp END   &kp UNDERSCORE  &kp MINUS  &kp RIGHT_SHIFT  &kp PAGE_UP   &kp PAGE_DOWN                   &as PIPE NON_US_BACKSLASH  &trans
-&trans  &out OUT_TOG  &dongle_bootload_macro  &trans    &trans    &kp TILDE       &kp GRAVE  &as PLUS EQUAL   &kp SQT       &as DOUBLE_QUOTES SINGLE_QUOTE  &kp DELETE                 &trans
-        &trans        &trans                  &trans    &trans    &trans                                      &trans        &trans                          &trans
-            >;
-        };
-
-        Shortcut {
-            label = "shortcut";
-            bindings = <
-&trans  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp NUMBER_5      &kp NUMBER_6       &kp NUMBER_7     &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0  &trans
-&trans  &kp LG(A)     &kp LG(S)     &kp LG(D)     &kp LG(F)     &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp RIGHT_SHIFT  &kp F6        &kp F7        &kp F8        &trans
-&trans  &kp LG(Z)     &kp LG(X)     &kp LG(C)     &kp LG(V)     &kp LEFT_BRACE    &kp RIGHT_BRACE    &kp F1           &kp F2        &kp F3        &kp F4        &trans
-        &trans        &trans        &trans        &trans        &trans                                                &trans        &trans        &trans
-            >;
-        };
-
-        Game {
-            label = "Game";
-            bindings = <
-&trans  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp NUMBER_5  &kp LC(RA(Y))  &kp LC(RA(U))  &kp LC(RA(I))  &kp LC(RA(H))  &kp LC(RA(J))  &trans
-&trans  &kp L         &kp O         &kp Y         &kp K         &kp G         &trans         &trans         &trans         &trans         &trans         &trans
-&trans  &none         &to 0         &none         &kp NUMBER_6  &kp NUMBER_7  &trans         &trans         &trans         &trans         &trans         &trans
-        &trans        &trans        &trans        &trans        &trans                                      &trans         &trans         &to 0
-            >;
-        };
-
         Mouse {
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans          &msc SCRL_UP    &trans           &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &mkp LCLK       &mkp MCLK       &mkp RCLK        &trans  &trans
+&trans  &trans  &mkp LCLK       &mkp MCLK       &mkp RCLK  &trans  &trans  &mkp LCLK       &mkp MCLK       &mkp RCLK        &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_RIGHT  &trans  &trans
-        &trans  &trans  &trans  &trans  &trans                          &trans          &trans           &trans
+        &trans  &trans  &trans  &trans  &trans                          &trans          &trans           &to 0
             >;
         };
     };
